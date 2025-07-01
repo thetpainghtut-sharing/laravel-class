@@ -1,0 +1,12 @@
+routes
+  - web.php (can register routes here)
+    - Route -> get -> call views directly
+    - 
+
+resources
+  - views
+    - hello.blade.php (UI)
+
+
+
+Route -> [Controller, method] -> this method -> call view
