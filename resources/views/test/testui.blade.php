@@ -7,11 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <h2>{{ $title }}</h2>
-  <ul>
-    @foreach ($todos as $todo)
-      <li>{{ $todo }}</li>
-    @endforeach
-  </ul>
+  <h2>This is test UI -> views/test/testui.blade.php</h2>
 </body>
 </html>
