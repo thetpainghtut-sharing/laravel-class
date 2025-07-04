@@ -7,6 +7,15 @@ resources
   - views
     - hello.blade.php (UI)
 
-
-
 Route -> [Controller, method] -> this method -> call view
+
+Template Building
+- view('testing.name') 
+- @include('parth')
+- public -> folder -> css / js / images
+- asset('')
+
+- main structure -> layout.blade.php (html / @yield) 
+- page
+  -> extends -> layout
+  -> section -> for yield -> fill
