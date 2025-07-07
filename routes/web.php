@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,11 +23,12 @@ Route::get('/test', [App\Http\Controllers\IntroController::class, 'testfun']);
 // delete two routes (about, contact)
 
 
-Route::get('/', [App\Http\Controllers\TemplateController::class, 'index'])->name('homepage');
-Route::get('/about', [App\Http\Controllers\TemplateController::class, 'about'])->name('aboutpage');
-Route::get('/post', [App\Http\Controllers\TemplateController::class, 'post'])->name('postpage');
-Route::get('/contact', [App\Http\Controllers\TemplateController::class, 'contact'])->name('contactpage');
+Route::get('/', [TemplateController::class, 'index'])->name('homepage');
+Route::get('/about', [TemplateController::class, 'about'])->name('aboutpage');
+Route::get('/post', [TemplateController::class, 'post'])->name('postpage');
+Route::get('/contact', [TemplateController::class, 'contact'])->name('contactpage');
 
 // Backend
 Route::get('/table', [App\Http\Controllers\BackendTemplateController::class, 'tablefun'])->name('tablepage');
 
+Route::resource('categories', CategoryController::class);

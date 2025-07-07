@@ -99,9 +99,16 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('tablepage') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
+            </li>
+
+            <!-- Nav Item - Categories -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('categories.index') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Categories</span></a>
             </li>
 
             <!-- Divider -->
