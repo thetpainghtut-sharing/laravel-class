@@ -27,7 +27,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // var_dump($request->all());
+        // die();
+        $request->validate([
+            'categoryName' => 'required|min:3',
+        ]);
+
+        $categoryName = $request->categoryName;
+
+        // store into database table
+        // return $categoryName;
+
+        // redirect to list page
+        return redirect()->route('categories.index');
     }
 
     /**
