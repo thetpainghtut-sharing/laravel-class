@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -11,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.category.list');
+        $categories = Category::all();
+        return view('backend.category.list', compact('categories'));
     }
 
     /**
@@ -36,7 +38,9 @@ class CategoryController extends Controller
         $categoryName = $request->categoryName;
 
         // store into database table
-        // return $categoryName;
+        Category::create([
+            'name' => $categoryName,
+        ]);
 
         // redirect to list page
         return redirect()->route('categories.index');
@@ -71,6 +75,8 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route('categories.index');
     }
 }
