@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,4 @@ Route::get('/contact', [TemplateController::class, 'contact'])->name('contactpag
 Route::get('/table', [App\Http\Controllers\BackendTemplateController::class, 'tablefun'])->name('tablepage');
 
 Route::resource('categories', CategoryController::class);
+Route::resource('students', StudentController::class);
