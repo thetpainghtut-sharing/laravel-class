@@ -19,3 +19,21 @@ Template Building
 - page
   -> extends -> layout
   -> section -> for yield -> fill
+
+CRUD // resource -> migration -> model
+
+categories 
+  (id, name, created_at, updated_at)
+  - ဘာသာရေး
+  - စီးပွားရေး
+  - သုတ
+  - ရသ
+  - ကာတွန်း
+
+books 
+  (id, title, category_id, cover, content, created_at, updated_at)
+  - သူငယ်ချင်းလို့ဆက် ခေါ်မယ်ခိုင်, ရသ, ပုံ, စာသား အနည်းငယ်
+
+
+categories (1) -----------> (1..*) books
+categories (1) <----------- (1) books

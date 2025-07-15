@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,4 @@ Route::get('/table', [App\Http\Controllers\BackendTemplateController::class, 'ta
 
 Route::resource('categories', CategoryController::class);
 Route::resource('students', StudentController::class);
+Route::resource('books', BookController::class);

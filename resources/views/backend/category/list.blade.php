@@ -22,6 +22,7 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Books</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -30,6 +31,7 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
+                                <td>{{$item->books->count()}}</td>
                                 <td>
                                     <a href="{{route('categories.edit', $item->id)}}" class="btn btn-sm btn-primary">Edit</a>
                                     <form action="{{route('categories.destroy', $item->id)}}" method="POST" class="d-inline-block">
