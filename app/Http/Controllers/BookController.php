@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -12,7 +13,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+        return view('backend.book.list', compact('books'));
     }
 
     /**
@@ -20,7 +22,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('backend.book.create', compact('categories'));
     }
 
     /**
@@ -28,7 +31,32 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'bookName' => 'required|min:3',
+            'bookAuthor' => 'required|min:3',
+            'bookPrice' => 'required|numeric',
+            'bookCategory' => 'required|exists:categories,id',
+            'bookImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bookDescription' => 'required|min:15',
+        ]);
+
+        // $book = new Book();
+        // $book->name = $request->bookName;
+        // $book->author = $request->bookAuthor;
+        // $book->price = $request->bookPrice;
+        // $book->category_id = $request->bookCategory;
+        // $book->description = $request->bookDescription;
+
+        // if ($request->hasFile('bookImage')) {
+        //     $image = $request->file('bookImage');
+        //     $imageName = time() . '.' . $image->getClientOriginalExtension();
+        //     $image->move(public_path('images'), $imageName);
+        //     $book->image = $imageName;
+        // }
+
+        // $book->save();
+
+        // return redirect()->route('books.index')->with('success', 'Book created successfully.');
     }
 
     /**

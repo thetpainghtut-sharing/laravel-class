@@ -37,3 +37,19 @@ books
 
 categories (1) -----------> (1..*) books
 categories (1) <----------- (1) books
+
+
+MVC - Model / View / Controller
+
+Model - codes working with DB <--- Business logic
+      - Query (SELECT * FROM tbl_name)
+      - ORM (all)
+
+View  - codes for showing UI. <--- Presentation
+      - HTML / CSS / JS
+
+Controller  - codes managing application structure <---- Application 
+            - accept request (route / form data)
+            - define application
+
+Database - Data
