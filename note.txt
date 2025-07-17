@@ -53,3 +53,11 @@ Controller  - codes managing application structure <---- Application
             - define application
 
 Database - Data
+
+
+File Upload 
+  - accept file [name, size, ....] --> a.jpg
+  - get extension ---> jpg
+  - oe34dlfjsd.jpg 
+  - images 
+    - a.jpg / a(1).jpg

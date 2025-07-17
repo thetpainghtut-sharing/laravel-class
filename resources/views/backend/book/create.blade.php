@@ -71,7 +71,7 @@
               <div class="row mb-3">
                 <label for="image" class="col-sm-2 col-form-label">Image</label>
                 <div class="col-sm-10">
-                  <input type="file" name="bookImage" class="form-control-file w-50 @error('bookImage') is-invalid @enderror" value="{{old('bookImage')}}" id="image" placeholder="...">
+                  <input type="file" name="bookImage" class="form-control-file w-50 @error('bookImage') is-invalid @enderror" id="image" placeholder="...">
                   @error('bookImage')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>

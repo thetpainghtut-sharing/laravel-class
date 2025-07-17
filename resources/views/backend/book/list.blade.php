@@ -37,6 +37,7 @@
                                 <td>{{$item->price}}</td>
                                 <td>{{$item->category->name}}</td>
                                 <td>
+                                    <a href="{{route('books.show', $item->id)}}" class="btn btn-sm btn-info">View</a>
                                     <a href="{{route('books.edit', $item->id)}}" class="btn btn-sm btn-primary">Edit</a>
                                     <form action="{{route('books.destroy', $item->id)}}" method="POST" class="d-inline-block">
                                         @method('DELETE')

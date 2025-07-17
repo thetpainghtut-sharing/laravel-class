@@ -40,23 +40,24 @@ class BookController extends Controller
             'bookDescription' => 'required|min:15',
         ]);
 
-        // $book = new Book();
-        // $book->name = $request->bookName;
-        // $book->author = $request->bookAuthor;
-        // $book->price = $request->bookPrice;
-        // $book->category_id = $request->bookCategory;
-        // $book->description = $request->bookDescription;
+        $book = new Book();
+        $book->name = $request->bookName;
+        $book->author = $request->bookAuthor;
+        $book->price = $request->bookPrice;
+        $book->category_id = $request->bookCategory;
+        $book->description = $request->bookDescription;
 
-        // if ($request->hasFile('bookImage')) {
-        //     $image = $request->file('bookImage');
-        //     $imageName = time() . '.' . $image->getClientOriginalExtension();
-        //     $image->move(public_path('images'), $imageName);
-        //     $book->image = $imageName;
-        // }
+        if ($request->hasFile('bookImage')) {
+            $image = $request->file('bookImage');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $uploadPath = public_path('images/books');
+            $image->move($uploadPath, $imageName);
+            $book->image = 'images/books/'. $imageName;
+        }
 
-        // $book->save();
+        $book->save();
 
-        // return redirect()->route('books.index')->with('success', 'Book created successfully.');
+        return redirect()->route('books.index')->with('success', 'Book created successfully.');
     }
 
     /**
@@ -64,7 +65,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('backend.book.detail', compact('book'));
     }
 
     /**
