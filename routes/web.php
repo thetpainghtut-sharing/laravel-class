@@ -36,3 +36,7 @@ Route::get('/table', [App\Http\Controllers\BackendTemplateController::class, 'ta
 Route::resource('categories', CategoryController::class);
 Route::resource('students', StudentController::class);
 Route::resource('books', BookController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

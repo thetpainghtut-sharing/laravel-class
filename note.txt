@@ -61,3 +61,14 @@ File Upload
   - oe34dlfjsd.jpg 
   - images 
     - a.jpg / a(1).jpg
+
+
+Auth 
+  - composer require laravel/ui
+  - php artisan ui bootstrap --auth
+
+  please check (once install use always)
+  - node -v 
+  - npm -v
+
+  - npm install && npm run dev 
